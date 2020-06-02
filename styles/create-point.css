@@ -12,7 +12,7 @@
     align-items: center;
 }
 
-#page_create-point header a {
+#page-create-point header a {
     color: var(--tittle-color);
     font-weight: bold;
 
@@ -20,7 +20,7 @@
     align-items: center;
 }
 
-#page_create-point header a {
+#page-create-point header a {
     margin-right: 16px;
     background-image: url('../assets/arrow-left.svg');
 
