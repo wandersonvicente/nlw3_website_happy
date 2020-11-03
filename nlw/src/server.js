@@ -5,14 +5,17 @@ const path = require('path');
 const pages = require('./pages.js');
 
 // iniciando o express
-const server = express()
+const server = express();
 server
+
+    //utlizar body da requisição
+    .use(express.urlencoded({extended: true}))
 
     //utilizando os arquivos estáticos
     .use(express.static('public'))
 
     //config template engine
-    .set('views', path.join(__dirname, "views"))
+    .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'hbs')
 
     //rotas da aplicação
@@ -20,6 +23,7 @@ server
     .get('/orphanage', pages.orphanage)
     .get('/orphanages', pages.orphanages)
     .get('/create-orphanage', pages.createOrphanage)
+    .post('/save-orphanage', pages.saveOrphanage);
     
 
 // ligar o servidor
