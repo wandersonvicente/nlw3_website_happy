@@ -2,7 +2,7 @@
 const map = L.map('mapid').setView([-8.0635765,-34.8718558], 15);
 
 //create and add tileLayer
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
 
 
 // create icon
@@ -21,7 +21,7 @@ map.on('click', (event) => {
     const lng = event.latlng.lng;
 
     document.querySelector('[name=lat]').value = lat;
-    document.querySelector('[name=lat]').value = lng;
+    document.querySelector('[name=lng]').value = lng;
 
     // remove icon
     marker && map.removeLayer(marker);
@@ -81,9 +81,7 @@ function toggleSelect(event){
 
     // retirar a class .acitive (dos botões)
     document.querySelectorAll('.button-select button')
-    .forEach(function(button){
-        button.classList.remove('active');
-    });
+    .forEach((button) => button.classList.remove('active'));
 
     // colocar a class .active nesse botão clicado
     const button = event.currentTarget;
@@ -97,13 +95,14 @@ function toggleSelect(event){
 }
 
 
- function validate(event){
-     // validar se lat e lng estão preenchidos
+function validate(event){
+    // validar se lat e lng estão preenchidos
+    
     //  const needsLatAndLng = true;
     //  if (needsLatAndLng) {
     //     event.prenventDefault()
     //     alert("Selecione um campo no mapa!")
-     //} 
+    //  } 
      
  }
 
